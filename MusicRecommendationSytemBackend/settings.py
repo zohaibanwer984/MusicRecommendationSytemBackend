@@ -142,6 +142,12 @@ ACCOUNT_EMAIL_VERIFICATION = "none"  # Set to "optional" or "mandatory" as desir
 ACCOUNT_AUTHENTICATION_METHOD = "username"
 ACCOUNT_EMAIL_REQUIRED = False
 
+# settings.py
+# REST_AUTH_REGISTER_SERIALIZER = 'api.serializers.CustomRegisterSerializer'
+REST_AUTH = {
+    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer'
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
