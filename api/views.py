@@ -20,6 +20,19 @@ def load_dataset():
 # Ensure dataset is loaded at startup
 load_dataset()
 
+class GetUserName(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+         first_name = request.user.first_name
+         last_name = request.user.last_name
+         username = request.user.username
+         return Response({
+            "username": username,
+            "firstname": first_name,
+            "lastname": last_name,
+        }, status=status.HTTP_200_OK)
+
 class PromptView(APIView):
     permission_classes = [IsAuthenticated]
 
