@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PromptView, FavoritesListView, AddFavoriteView, RemoveFavoriteView, DiscoverView, GetUserName
+from .views import PromptView, FavoritesListView, AddFavoriteView, RemoveFavoriteView, DiscoverView, GetUserName, IsLoggedin
 
 urlpatterns = [
     path('prompt/', PromptView.as_view(), name='prompt'),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('favorites/remove/<str:track_id>/', RemoveFavoriteView.as_view(), name='favorites-remove'),
     path('discover/', DiscoverView.as_view(), name='discover-view'),
     path('username/', GetUserName.as_view(), name="get-username"),
+    path('checkLogin/', IsLoggedin.as_view(), name="get-loginStatus"),
 ]

@@ -20,6 +20,14 @@ def load_dataset():
 # Ensure dataset is loaded at startup
 load_dataset()
 
+class IsLoggedin(APIView):
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        return Response(
+            {},
+            status= status.HTTP_204_NO_CONTENT
+        )
+
 class GetUserName(APIView):
     permission_classes = [IsAuthenticated]
 
